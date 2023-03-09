@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Do you love me???</h1>
+        <span>
+            <button onclick="clickY()">Yes</button>
+        </span>
+        <span>
+            <input type="button" id="No" value="No" onmouseover="clickN()" style="left: 0px;top: 0px">
+            <!-- <button id="No" value="No" onmouseover="clickN()" style="left: 0px;top: 0px"></button> -->
+        </span>
+    </div>
+
+
+    <script>
+        function clickY() {
+            alert("Are u sure??!")
+        }
+
+        function clickN() {
+            let a = document.getElementById('No');
+            let b = Math.random() * parseInt(window.innerHeight);
+            let c = Math.random() * parseInt(window.innerWidth);
+            a.style.position = 'relative';
+            a.style.top = b + 'px';
+            a.style.left =  c + 'px'; 
+            document.getElementById('No').value = 'Đố anh bắt được em!!!';
+        }
+
+
+
+    </script>
+</body>
+</html>
