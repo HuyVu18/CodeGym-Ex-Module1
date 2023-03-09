@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="pageReady()">
+    <img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;left:0; top:0;" height="100" width="80"/>
+
+    <script>
+
+        function upArrow() {
+            let nobi = document.getElementById('nobita');
+            nobi.style.top = parseInt(nobi.style.top) - 5 + 'px';
+        }
+
+        function downArrow() {
+            let nobi = document.getElementById('nobita');
+            nobi.style.top = parseInt(nobi.style.top) + 5 + 'px';
+        }
+
+        function leftArrow() {
+            let nobi = document.getElementById('nobita');
+            nobi.style.left = parseInt(nobi.style.left) - 5 + 'px';
+        }
+
+        function rightArrow() {
+            let nobi = document.getElementById('nobita');
+            nobi.style.left = parseInt(nobi.style.left) + 5 + 'px';
+        }
+
+        function moveSeclection(evt) {
+            switch (evt.keyCode) {
+                case 37:
+                    leftArrow()
+                    break;
+                case 39:
+                    rightArrow()
+                    break;
+                case 38:
+                    upArrow()
+                    break;
+                case 40:
+                    downArrow()
+                    break;
+            }
+        }
+
+        function pageReady() {
+            window.addEventListener('keydown', moveSeclection);
+        }
+
+
+        
+    </script>
+</body>
+</html>
