@@ -13,7 +13,7 @@
             <button onclick="clickY()">Yes</button>
         </span>
         <span>
-            <input type="button" id="No" value="No" onmouseover="clickN()" style="left: 0px;top: 0px">
+            <input type="button" id="No" value="No" onmouseover="clickN()" style="position: relative; left: 0px;top: 0px">
             <!-- <button id="No" value="No" onmouseover="clickN()" style="left: 0px;top: 0px"></button> -->
         </span>
     </div>
@@ -26,11 +26,8 @@
 
         function clickN() {
             let a = document.getElementById('No');
-            let b = Math.random() * parseInt(window.innerHeight);
-            let c = Math.random() * parseInt(window.innerWidth);
-            a.style.position = 'relative';
-            a.style.top = b + 'px';
-            a.style.left =  c + 'px'; 
+            a.style.top = Math.random() * parseInt(window.innerHeight) + 'px';
+            a.style.left =  Math.random() * parseInt(window.innerWidth) + 'px'; 
             document.getElementById('No').value = 'Đố anh bắt được em!!!';
         }
 

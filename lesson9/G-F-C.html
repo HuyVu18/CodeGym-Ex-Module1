@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="g1" onclick="G()">Good</button>
+        <button id="f1" onclick="F()">Fast</button>
+        <button id="c1" onclick="C()">Cheat</button>
+    </div>
+
+
+    <script>
+        let a = document.getElementById('g1');
+        let b = document.getElementById('f1');
+        let c = document.getElementById('c1');
+        function G() {
+            a.style.backgroundColor = 'red';
+            b.style.backgroundColor = 'white'
+
+        }
+        function F() {
+            b.style.backgroundColor = 'blue';
+            c.style.backgroundColor = 'white';
+
+        }
+        function C() {
+            c.style.backgroundColor = 'yellow';
+            a.style.backgroundColor = 'white';
+        }
+        
+
+    </script>
+</body>
+</html>
