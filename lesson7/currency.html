@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/currencyC.css">
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr class="header">
+                <th>Amount</th>
+                <th class="m8">From Currency</th>
+                <th class="m8">To Currency</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="input">
+                </td>
+                <td>
+                    <select name="" id="currency1">
+                        <option value="VND">VNĐ</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="" id="currency2">
+                        <option value="USD">USD</option>
+                        <option value="VND">VNĐ</option>
+                    </select>
+                </td>
+                <td>
+                    <button type="button" class="btn" onclick="myFunction()">Convert</button>
+                </td>
+            </tr>
+        </table>
+
+        <p id="result"></p>
+    </form>
+
+    <script src="/js/currencyj.js"></script>
+</body>
+</html>

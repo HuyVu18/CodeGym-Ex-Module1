@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="a"></div>
+
+
+    <script>
+        let a = prompt("Nhập số năm")
+
+        if (a%400 == 0) {
+            alert('nhuận')
+        } else if (a%100 == 0) {
+            alert('k nhuận')
+        } else if (a%4 == 0) {
+            alert('nhuận')
+        } else {
+            alert('k nhuận')
+        }
+
+        // if (a%4 == 0) {
+        //     if (a%100 == 0) {
+        //         if (a%400 == 0) {
+        //             document.getElementById('a').innerHTML = "Đây phải năm nhuận!"
+        //         } else {
+        //             document.getElementById('a').innerHTML = "Đây k phải năm nhuận!"
+        //         }
+        //     } else {
+        //         document.getElementById('a').innerHTML = "Đây phải năm nhuận!"
+        //     }
+        // } else {
+        //     document.getElementById('a').innerHTML = "Đây k phải năm nhuận!"
+        // }
+    </script>
+</body>
+</html>

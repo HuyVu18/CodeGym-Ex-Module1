@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casio</title>
+    <style>
+        * {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="">
+        <h1>CALCULATOR</h1>
+        <label for="">
+            <input type="number" id="i1">
+        </label> -
+        <label for="">
+            <input type="text" id="i2">
+        </label> <br>
+        <label for="">
+            <button type="button" onclick="F1()">Add +</button>
+        </label>
+        <label for="">
+            <button type="button" onclick="F2()">Sub -</button>
+        </label>
+        <label for="">
+            <button type="button" onclick="F3()">Mul x</button>
+        </label>
+        <label for="">
+            <button type="button" onclick="F4()">Div /</button>
+        </label>
+    </form>
+    <p>Result:</p>
+    <div id="Re"></div>
+    
+
+    <script>
+
+        
+        function F1() {
+            let a = parseInt(document.getElementById('i1').value); 
+            let b = parseInt(document.getElementById('i2').value);
+            let x = a + b;
+            document.getElementById('Re').innerHTML = x;
+        }
+        
+        function F2() {
+            let a = parseInt(document.getElementById('i1').value); 
+            let b = parseInt(document.getElementById('i2').value);  
+            let x = a - b;
+            document.getElementById('Re').innerHTML = x;
+        }
+        
+        function F3() {
+            let a = parseInt(document.getElementById('i1').value); 
+            let b = parseInt(document.getElementById('i2').value);  
+            let x = a * b;
+            document.getElementById('Re').innerHTML = x;
+        }
+        
+        function F4() {
+            let a = parseInt(document.getElementById('i1').value); 
+            let b = parseInt(document.getElementById('i2').value);  
+            let x = a / b;
+            document.getElementById('Re').innerHTML = x;
+        }
+        
+    </script>
+</body>
+</html>
