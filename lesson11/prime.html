@@ -13,11 +13,11 @@
     <script>
         let number = +prompt('Nhập số a');
         checkPrime(number);
-        
+
         function checkPrime(number) {
             let count = 0;
             let N = 0;
-            for (let i = 2; i < 2000; i++) {
+            for (let i = 2; i < 1000; i++) {
                 if (count < number) {
                     for (let j = 1; j <= i; j++) {
                         if (i%j == 0) {
