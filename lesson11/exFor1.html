@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // ex1
+        // let i = 0
+        // for (let a = 1; a < 100; a++) {
+        //     i = a + i;
+        // }
+        // alert('Đây là số ' + i);
+
+        // ex2
+        // let a = parseInt(prompt('Nhiệt độ hiện tại'));
+        // if (a > 100) {
+        //     alert('Hãy giảm nhiệt độ');
+        // } else if (a < 20) {
+        //         alert('Hãy tăng nhiệt độ');
+        //     } else {
+        //             alert('Nhiệt độ bình thường');
+        //         }
+
+        // ex2
+        // let k = parseInt(prompt('Nhập độ dài dãy Fibo '));
+        // let a = 0;
+        // let b = 1;
+        // let c = 0;
+        // let d = 0;   
+        // for (let i = 0 ; i < k; i++) {
+        //     c = a + b;
+        //     a = b;
+        //     b = c;
+        //     d += c;
+        //     document.write(c + '<br>');
+        // }
+        // document.write('Tổng các dãy số fibo hiện tại: ' + d + '<br>');
+
+        // ex6
+        // let i = 7;
+        // let k = 0;
+        // let h = 0
+        // for (let a = 0; a <= 30; a++) {
+        //     k = a * i;
+        //     h += k;            
+        //     document.write(k + '<br>')
+        // } 
+        // document.write('Tổng: ' + h + '<br>')
+
+        // ex7
+        for (let i = 1; i <= 100; i++) {
+            if (i%3 == 0) {
+                if (i%5 == 0) {
+                    document.write('FizzBuzz' + '<br>');
+                } else {
+                        document.write('Fizz' + '<br>');
+                }
+            } else if (i%5 == 0) {
+                document.write('Buzz' + '<br>');
+            } else {
+                document.write(i + '<br>');
+            }
+        }
+
+
+
+        
+            
+
+
+
+
+    </script>
+</body>
+</html>
