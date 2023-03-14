@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>DICTIONARY</h1>
+        <input type="text" id="inputa">
+        <input type="button" onclick="search()" value="Search">
+    </div>
+    <br>
+    <span id="Re"></span>
+    
+    <script>
+
+        function search() {
+            let inputb = document.getElementById('inputa').value;
+            let eng = ['pen', 'mouse', 'laptop', 'watch', 'book'];
+            let vie = ['bút', 'chuột', 'máy tính xách tay', 'đồng hồ', 'sổ'];
+    
+            for (let i = 0; i < eng.length; i++) {
+                if (inputb == eng[i]) {
+                    indexEng = i
+                    for(let j = 0; j < vie.length; j++) {
+                        if (indexEng == j) {
+                            result = vie[j]
+                        }
+                    }                    
+                }
+            }
+            document.getElementById('Re').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
