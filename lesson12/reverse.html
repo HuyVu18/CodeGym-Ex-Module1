@@ -10,16 +10,25 @@
     
 
     <script>
-        let a = [-9, -1, 0, 3, 2, 8];
-        let st = 0;
+        // let a = [-9, -1, 0, 3, 2, 8];
+        let a = [1, 2, 3, 4, 5, 6, 7];
         let last = a.length - 1;
+        // let st = 0;
+        
+        // while (st < last) {
+            //     let b = a[st];
+            //     a[st] = a[last];
+            //     a[last] = b;
+            //     st++;
+            //     last--;            
+            // }
+            // document.write(a);
 
-        while (st < last) {
-            let b = a[st];
-            a[st] = a[last];
+        for (let i = 0; i <  last; i++) {
+            let b = a[i];
+            a[i] = a[last];
             a[last] = b;
-            st++;
-            last--;            
+            last--;
         }
         document.write(a);
     </script>

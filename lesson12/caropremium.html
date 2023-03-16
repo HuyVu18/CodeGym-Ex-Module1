@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="init()">
+    <span id="current_turn"></span>
+    <div id="caroboard"></div><br>
+    <span id="endgame"></span>
+    <!-- <button style="width: 30px; height: 30px; font-size: 16px; padding: auto;" name="b14" onclick="check(this)"></button> -->
+    <script>
+        let caro = new Array(20);
+        let i, j;
+        let current = document.getElementById('current_turn');
+        let winner = document.getElementById('endgame');
+        let turn = true;   
+
+        function init(){
+            turn = true;
+            for(i=0; i<20; i++){
+                caro[i] = new Array(20);
+            }
+            for(i=3; i < caro.length - 3; i++){ 
+                for(j=3; j< caro.length - 3; j++){
+                    caro[i][j] = " ";
+                    document.getElementById('caroboard').innerHTML += '<button style="width: 50px; height: 50px; font-size: 15px; padding: 20px; margin: 0px" name="b' + i +"_" + j +"_"+ '" onclick="check(this)">&nbsp;&nbsp;</button>';
+                }  
+                document.getElementById('caroboard').innerHTML += '<br>';               
+            }    
+            console.log(caro);      
+        }  
+          
+        function check(button){
+            let btname = button.getAttribute('name');
+            let row = parseInt(btname[1] + btname[2]);
+            let col;
+            if(btname[2] == "_"){
+                col = parseInt(btname[3] + btname[4]);
+            }else{
+                col = parseInt(btname[4] + btname[5]);
+            }
+            //X turn: arr-value = true, O turn: arr-value = false.
+            if(turn){
+                if(caro[row][col] == " "){
+                    button.innerHTML = 'X';
+                    caro[row][col] = "X";
+                    
+                    if(checkWinner("X", row, col)){
+                        // winner.innerHTML = "Winner: X";
+                        alert('Winner: X');
+                        document.getElementById('caroboard').innerHTML = "";
+                        init();
+                    }else{
+                        turn = false;
+                        current.innerHTML = "Current turn: O";
+                    }
+                }                    
+            } 
+               else if(caro[row][col] == " " && turn == false){
+                button.innerHTML = 'O';
+                caro[row][col] = "O";
+                if(checkWinner("O", row, col)){
+                        // winner.innerHTML = "Winner: O";
+                        alert('Winner: O')
+                        document.getElementById('caroboard').innerHTML = "";
+                        init();
+                    }else{
+                        turn = true;
+                        current.innerHTML = "Current turn: X";
+                    }
+            }      
+        }
+
+
+        function checkWinner(val, row, col){
+            let winCondition;
+            //check row
+            for(let checkrow=col-4; checkrow <=col ;checkrow++){
+                winCondition=0;
+                for(let i = 0; i < 5; i++){
+                    if(caro[row][checkrow+i] != val){
+                        continue;
+                    }else{
+                        winCondition++;
+                    }  
+                        if(winCondition == 5){
+                        return true;
+                        break;
+                    } 
+                }   
+            }
+
+            //check col
+            for(let checkcol=row-4; checkcol <=row ;checkcol++){
+                winCondition=0;
+                for(let i = 0; i < 5; i++){
+                    if(caro[checkcol+i][col] != val){
+                        continue;
+                    }else{
+                        winCondition++;
+                    }  
+                        if(winCondition == 5){
+                        return true;
+                        break;
+                    } 
+                }   
+            }
+            //check duong cheo 1
+            for(let checkrow=col-4, checkcol=row-4; checkrow <=col ;checkrow++, checkcol++){
+                winCondition=0;
+                for(let i = 0; i < 5; i++){
+                    if(caro[checkcol+i][checkrow+i] != val){
+                        continue;
+                    }else{
+                        winCondition++;
+                    }  
+                        if(winCondition == 5){
+                        return true;
+                        break;
+                    } 
+                }   
+            }
+
+            //check duong cheo 2
+            for(let checkrow=col-4, checkcol=row+4; checkrow <=col ;checkrow++, checkcol--){
+                winCondition=0;
+                for(let i = 0; i < 5; i++){
+                    if(caro[checkcol-i][checkrow+i] != val){
+                        continue;
+                    }else{
+                        winCondition++;
+                    }  
+                        if(winCondition == 5){
+                        return true;
+                        break;
+                    } 
+                }   
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

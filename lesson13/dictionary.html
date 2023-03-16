@@ -21,18 +21,15 @@
             let inputb = document.getElementById('inputa').value;
             let eng = ['pen', 'mouse', 'laptop', 'watch', 'book'];
             let vie = ['bút', 'chuột', 'máy tính xách tay', 'đồng hồ', 'sổ'];
-    
-            for (let i = 0; i < eng.length; i++) {
+            for (var i = 0; i < eng.length; i++) {
                 if (inputb == eng[i]) {
-                    indexEng = i
-                    for(let j = 0; j < vie.length; j++) {
-                        if (indexEng == j) {
-                            result = vie[j]
-                        }
-                    }                    
-                }
+                    document.getElementById('Re').innerHTML = vie[i];
+                    break;                                     
+                } 
             }
-            document.getElementById('Re').innerHTML = result;
+            if (i == eng.length) {
+                document.getElementById('Re').innerHTML = 'Not found!';
+            }
         }
     </script>
 </body>
