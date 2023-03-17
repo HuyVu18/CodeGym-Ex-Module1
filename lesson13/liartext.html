@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Thử gõ vài chữ đi(nhớ tắt unikey)</h1>
+    <textarea id="txt" cols="30" rows="10" oninput="fakeType()"> </textarea>
+    <script>
+        // let fakeInput = document.getElementById('txt');
+        //     let fakeText = "Faking Text area on Typing".split('');
+        //     let currLength;
+        //     let dispText = "";
+        //     function fakeType(){
+        //         currLength = fakeInput.value.length;
+        //         for(let i=0; i<currLength; i++){
+        //             dispText += fakeText[i];
+        //             if(i == fakeText.length){
+        //                 dispText = "";
+        //                 fakeInput.value = "";
+        //             }                    
+        //         }
+        //         fakeInput.value = dispText;
+        //         dispText = "";
+        //     }
+
+        let fakeText = 'Faking Text area on Typing!!!'.split('');
+        let dislay = '';
+        function fakeType() {
+            let fakeInput = document.getElementById('txt');
+            for (let i = 0; i < fakeInput.value.length; i++) {
+                dislay += fakeText[i];
+                if (i == fakeText.length) {
+                    dislay = '';
+                    fakeInput.value = '';
+                }
+            }
+            fakeInput.value = dislay;
+            dislay = '';
+        } 
+
+    </script>
+</body>
+</html>
