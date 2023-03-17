@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // ex1
+        // var a = [
+        //     [1, 2, 1, 24],
+        //     [8, 11, 9, 4],
+        //     [7, 0, 7, 27],
+        //     [7, 4, 28, 14],
+        //     [3, 10, 26, 7]
+        // ];
+        // for (var i = 0; i < a.length; i++) {
+        //     console.log('Row ' + i);    
+        //     for (var j = 0; j < a[i].length; j++) {        
+        //         console.log(a[i][j]); 
+        //     }
+        // };
+
+        // ex2
+        // let a = prompt('Input some text');
+        // let b = a.split('');
+        // console.log(b.reverse().join(''));
+
+        // ex3
+        // let a = prompt('Input random text');
+        // let NUM = '0123456789';
+        // let result = [];
+        // let i = 0;
+        // for (; i < a.length; i++) {
+        //     if (NUM.indexOf(a[i]) !== -1) {
+        //         result.push(a[i]);
+        //     }
+        // }
+        // alert('Array have: ' + i + ' element and ' + result.length + ' number is: ' + result.join(''));
+    
+        // ex4
+        // let a = prompt('Input random text');
+        // let NUM = 'abcdefghijklmnopqrstuvwxyz';
+        // let result = [];
+        // let i = 0;
+        // for (; i < a.length; i++) {
+        //     if (NUM.indexOf(a[i]) !== -1) {
+        //         result.push(a[i]);
+        //     }
+        // }
+        // alert('Array have: ' + i + ' element and ' + result.length + ' text is: ' + result.join(''));
+        
+        // ex5
+        // let a = prompt('Input array 1');
+        // let b = prompt('Input array 2');        
+        // if (a.length == b.length) {
+        //     let i = 0;
+        //     for (; i < a.length; i++) {
+        //         if (a[i] != b[i]) {
+        //             alert('Arr1 NOT same Arr2!!');
+        //             break;
+        //         }
+        //     } 
+        //     if (i == a.length) {
+        //         alert('Arr1 same Arr2!');
+        //     }
+        // } else {
+        //     alert('Arr1 NOT same Arr2!!');
+        // }
+
+        // ex6
+        let a = prompt('Input string');
+        let newarr = []
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] == '-') {
+                newarr.splice(i, 1, '_');
+            } else {
+                newarr.push(a[i]);
+            }
+        }
+        alert(newarr.join(''));
+
+
+    </script>
+</body>
+</html>
