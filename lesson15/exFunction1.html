@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex1 -->
+    <!-- <input type="button" id="sayhi" value="TRY!">
+    <script>
+        function hi() {
+            alert('"Xin Chao!"');
+        }
+        document.getElementById('sayhi').addEventListener('click', hi);
+    </script> -->
+
+    <!-- ex2 -->
+    <!-- <div>
+        <p>ADD +1</p>
+        <input type="text" oninput="add(this.value)">
+    </div>
+    <p id="result"></p>
+    <script>
+        function add(a) {
+            a = parseInt(a);
+            let b = a + 1;
+            document.getElementById('result').innerHTML = b + ' haha';
+        }
+    </script> -->
+
+    <!-- <script>
+        // ex3
+        // let a = parseInt(prompt('Nhap so a.'));
+        // let b = parseInt(prompt('Nhap so b.'));
+        // if (a > b) {
+        //     alert('So ' + a + ' lon hon so ' + b);
+        // } else {
+        //     document.write('Tong 2 so la ' + (a + b));
+        // }
+
+        
+        </script> -->
+
+    <!-- ex4
+    <script>
+        function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+        }
+        result = 0;
+        console.log(result);
+        result = addNumbers();
+        console.log(result);
+    </script> -->
+
+    <div>
+        <h1>STAR</h1>
+        <input type="text" id="inputa">
+        <input type="button" onclick="search()" value="Search">
+    </div>
+    <br>
+    <span id="Re"></span>    
+    <script>
+        function search() {
+            let inputb = document.getElementById('inputa').value;
+            let eng = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+            let vie = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+            for (var i = 0; i < eng.length; i++) {
+                if (inputb == eng[i]) {
+                    document.getElementById('Re').innerHTML = vie[i];
+                    break;                                     
+                } 
+            }
+            if (i == eng.length) {
+                document.getElementById('Re').innerHTML = 'Not found!';
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
