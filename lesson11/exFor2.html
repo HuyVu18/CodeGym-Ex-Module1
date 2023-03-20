@@ -14,23 +14,72 @@
         // let k = parseInt(prompt('Nhập độ dài dãy Fibo '));
         // let a = 0;
         // let b = 1;
-        // let c = 0;
-        // let d = 0;   
+        // let c = 0;   
         // for (let i = 0 ; i < k; i++) {
         //     c = a + b;
         //     a = b;
         //     b = c;
-        //     d += c;
-        //     document.write(c + '<br>');
+        //     document.write(c + '<br>')
         // }
-        // document.write('Tổng các dãy số fibo hiện tại: ' + d + '<br>');
+        
+        // ex2       
+        // let a = parseInt(prompt('Input a!'));
+        // let c = 1;
+        // for (let i = 1; i <= a; i++) {
+        //     c *= i;                
+        // }
+        // console.log(c)
 
-        // ex2
-        let a = parseInt(prompt('Nhập số a'))
+        // ex6
+        // let heart = "<table >";
+        // let cao = parseInt(prompt("nhập vào chiều cao trái tim:(>6)"));
+        // for (let dong = 0; dong < cao; dong++) {
+        //     heart += "<tr>";
+        // //if(dong<cao/2&&dong>cao/4+1){continue;}
+        //     for (let cot = 0; cot <= cao; cot++) {
+        //         if (dong < cao / 2) {
+        //             if (dong + cot < (cao / 4) ||
+        //                 cot - dong > (cao * 3 / 4) ||
+        //                 (cot - dong > (cao / 4) &&
+        //                 cot - dong < (cao * 3 / 4) &&
+        //                 cot + dong < (cao * 3 / 4))) {
+        //             heart += "<td width=\"20px\">" + "</td>";
+        //             } else {
+        //                 heart += "<td width=\"20px\">" + "*" + "</td>";
+        //             }
+
+        //             } else {
+        //         if (dong - cot > (cao / 2 - (cao - 1) % 2) || cot + dong >= 3 * cao / 2) {
+        //         heart += "<td width=\"20px\">" + "</td>";
+        //             } else {
+        //                 heart += "<td width=\"20px\">" + "*" + "</td>";
+        //             }
+        //             }
+        //     }
+        // heart += "</tr>";
+        // }
+        // heart += "</table>";
+        // document.write(heart);
+
+        // ex4
+        for (var i = 0 ; i < 5; i ++) {
+            for(var j = 0; j < 10; j ++){
+            document.write("*");
+        }
+        document.write('<br>');
+    }
+
+
+        
+
+        
 
 
 
     </script>
+
+    <!-- ex4 -->
+    
 
 </body>
 </html>
