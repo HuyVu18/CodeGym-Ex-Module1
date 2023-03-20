@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex1
+    <div>
+        <input type="text" oninput="x(this.value)">
+    </div>
+    <p id="result"></p>
+    <script>
+        function x(a) {
+            let b = a * a;
+            document.getElementById('result').innerHTML = b;
+        }
+    </script> -->
+    
+    <!-- ex2 -->
+    <!-- <div>
+        <input type="text" oninput="o(this.value)" placeholder="Nhap ban kinh hinh tron">
+    </div>
+    <p id="resultS"></p>
+    <p id="resultC"></p>
+    <script>
+        function o(a) {
+            let b = a * a * 3.14;
+            let c = a * 2 * 3.14;
+            document.getElementById('resultS').innerHTML = 'Dien tich hinh tron ' + b;
+            document.getElementById('resultC').innerHTML = 'Chu vi hinh tron ' + c;
+        }
+    </script> -->
+
+    <!-- ex3 -->
+    <!-- <div>
+        <input type="text" oninput="x(this.value)">
+    </div>
+    <p id="result"></p>
+    <script>
+        function x(a) {
+            let b = 1;
+            for (i = 1; i <= a; i++) {
+                b *= i;
+            }
+            document.getElementById('result').innerHTML = b;
+        }
+    </script> -->
+
+    <!-- ex4 -->
+    <!-- <div>
+        <input type="text" oninput="x(this.value)" id="N">
+    </div>
+    <p id="result"></p>
+    <script>
+        function x(s) {
+            if (!isNaN(s) == true) {
+                document.getElementById('result').innerHTML = 'true';
+            } else {
+                document.getElementById('result').innerHTML = 'false';
+            }
+        }
+    </script> -->
+
+    <!-- ex5 -->
+    <!-- <script>
+        let a = parseInt(prompt('Nhap so a.'));
+        let b = parseInt(prompt('Nhap so b.'));
+        let c = parseInt(prompt('Nhap so c.'));
+        if (a > b && a > c) {
+            alert('So lo nhat la ' + a);
+        } else if (b > a && b > c) {
+            alert('So lo nhat la ' + b);
+        } else {
+            alert('So lo nhat la ' + c);
+
+        }
+    </script> -->
+
+    <!-- ex6 -->
+    <!-- <div>
+        <input type="text" oninput="x(this.value)" id="N">
+    </div>
+    <p id="result"></p>
+    <script>
+        function x(s) {
+            if (s > 0) {
+                document.getElementById('result').innerHTML = 'true';
+            } else {
+                document.getElementById('result').innerHTML = 'false';
+            }
+        }
+    </script> -->
+
+    <!-- ex7 -->
+    <!-- <script>
+        let a = parseInt(prompt('Nhap so a.'));
+        let b = parseInt(prompt('Nhap so b.'));
+        alert(b + ', ' + a);
+    </script> -->
+
+    <!-- ex8 -->
+    <!-- <div>
+        <input type="text" oninput="x(this.value)" id="N">
+    </div>
+    <p id="result"></p>
+    <script>
+        function x(s) {
+            let a = s.split('');
+            document.getElementById('result').innerHTML = a.reverse();
+        }
+    </script> -->
+
+    <!-- ex9 -->
+    <script>
+        let a = prompt('Nhap mang a.').split('');
+        let b = prompt('Nhap ky tu b.');
+        let count = 0;
+
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] == b) {
+                count += 1;
+            }            
+        }
+        if (count > 0) {
+            alert(b + ' xuat hien trong mang a ' + count + ' lan');
+        } else {
+            alert('-1');
+
+        }
+
+    </script>
+
+
+</body>
+</html>
