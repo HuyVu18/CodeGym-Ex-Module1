@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        let canvas = document.getElementById('myCanvas');
+        let context = canvas.getContext('2d');
+
+        function getRandomHex() {
+            return Math.floor(Math.random() * 255);
+        }
+        function getRandomColor() {
+            let red = getRandomHex();
+            let green = getRandomHex();
+            let blue = getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+        // let color = getRandomColor();
+
+        let circles = [];
+        for (let i = 0; i < 30; i++) {
+            let circle = {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.floor(Math.random() * 80),
+                dx: Math.random() * 10 - 5,
+                dy: Math.random() * 10 - 5,
+                color: getRandomColor()
+            }
+        circles.push(circle);
+        }        
+
+        function drawCircles() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < circles.length; i++) {
+                let circle = circles[i];
+                context.beginPath();
+                context.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
+                context.fillStyle = circle.color;
+                context.fill();
+
+                circle.x += circle.dx;
+                circle.y += circle.dy;
+
+                if (circle.x + circle.radius > canvas.width || circle.x - circle.radius < 0) {
+                    circle.dx = -circle.dx;
+                }
+                if (circle.y + circle.radius > canvas.height || circle.y - circle.radius < 0) {
+                    circle.dy = -circle.dy;
+                }
+            }
+            requestAnimationFrame(drawCircles);
+        }
+        drawCircles();
+    </script>
+</body>
+</html>
