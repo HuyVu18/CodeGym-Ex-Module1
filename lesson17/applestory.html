@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        class Apple {
+            constructor(weight) {
+                this.weight = weight;
+            }        
+            still = function () {
+                if (this.weight > 0) {
+                    return true;
+                }
+            }
+            decrease = function () {
+                this.weight -= 1;
+            }
+
+        }
+
+        class Human {
+            constructor(name, gender, hweight) {
+                this.name = name;
+                this.gender = gender;
+                this.hweight = hweight;
+            }
+
+            getName = function() {
+                return this.name;
+            }
+            
+            isMale = function() {
+                if (this.gender == 1) {
+                    return 'Male';
+                } else {
+                    return 'Female';
+                }
+            }
+
+            eat = function(a) {
+                if (a.still()) {
+                    a.decrease();
+                    this.hweight++;
+                }
+            }
+
+            gethweight = function() {
+                return this.hweight;
+            }
+        }
+
+        let human1 = new Human('Adam', 1, 80);
+        let human2 = new Human('Eva', 0, 50);
+        let apple = new Apple(10);
+        function main() {
+            for (let i = 0; i < 10; i++) {
+                human1.eat(apple);
+            }
+        }
+        main();
+        console.log(human1.getName() + ' eat apple and increase ' + apple.weight + ' Kg.');
+        console.log(human1.getName() + ' has ' + human1.hweight + ' Kg.');
+
+        
+    </script>
+</body>
+</html>

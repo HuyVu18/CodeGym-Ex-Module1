@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Mobile {
+            constructor(battery, messMemory, inboxMemory, sendMemory, status) {
+                this.battery = battery;
+                this.messMemory = messMemory;
+                this.inboxMemory = inboxMemory;
+                this.sendMemory = sendMemory;
+                this.status = status;                
+            }
+
+            isOn = function () {
+                return this.status;
+            }
+
+            useMobile = function () {
+                this.battery--;
+            }
+
+            chanrgeMobile = function () {
+                if (this.battery < 100) {
+                    this.battery++;
+                }
+            }
+
+            turnOn = function () {
+                if (!this.isOn()) {
+                    if (this.battery > 0 && this.battery <= 100) {
+                        this.useMobile();
+                        this.status = true;
+                    }
+                }
+            }
+
+            turnOff = function () {
+                if (this.isOn()) {
+                    if (this.battery > 0 && this.battery <= 100) {
+                        this.useMobile();
+                        this.status = false;
+                    }
+                }
+            }
+
+            writeMess = function(message) {
+                if(this.isOn()) {
+                    this.useMobile();
+                    this.messMemory = message;
+                }
+            }
+
+            sendMess = function (toMobile) {
+                if(this.isOn()) {
+                    this.useMobile();
+                    this.sendMemory = this.messMemory;
+                    toMobile.inboxMemory = this.sendMemory;
+                }
+            }
+            
+            receiveMess = function () {
+                if(this.is()) {
+                    this.useMobile();
+                    return 'You have a new message!';
+                }
+            } 
+
+            viewInbox = function() {
+                if(this.isOn()) {
+                    this.useMobile();
+                    return this.inboxMemory;
+                }
+            }
+
+            viewSendMess = function() {
+                if(this.isOn()) {
+                    this.useMobile();
+                    return this.sendMemory;
+                }
+            }
+        }
+
+        function main() {
+            let nokia = new Mobile(94, '', '', '', true);
+            let iphone = new Mobile(93, '', '', '', true);
+            let mess = 'Hello, how are you! Nice to meet you. Haha';
+            nokia.writeMess(mess);
+            nokia.sendMess(iphone);
+            console.log(iphone.viewInbox());
+        }
+        main();
+
+
+    </script>
+</body>
+</html>
