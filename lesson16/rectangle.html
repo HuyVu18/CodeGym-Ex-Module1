@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p>Chiều dài</p>
     <input type="text" id="inputa">
@@ -19,26 +21,25 @@
 
     <script>
         class Rectangle {
-            constructor (a, b) {
+            constructor(a, b) {
                 this.x = 20;
                 this.y = 20;
                 this.a = a;
                 this.b = b;
             }
 
-            drawRectangle = function(ctx) {
+            drawRectangle = function (ctx) {
                 ctx.fillStyle = '#FF0000';
                 ctx.fillRect(this.x, this.y, this.a, this.b);
             }
 
-            cRectangle = function() {
+            cRectangle = function () {
                 return (this.a + this.b) * 2;
             }
-            sRectangle = function() {
+            sRectangle = function () {
                 return this.a * this.b;
             }
         }
-
         let canvas = document.getElementById('myCanvas');
         let ctx = canvas.getContext('2d');
 
@@ -57,4 +58,5 @@
         }
     </script>
 </body>
+
 </html>

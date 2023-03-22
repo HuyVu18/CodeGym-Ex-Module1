@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Độ C</p>
+    <input type="text" oninput="converCtF(this.value)" id="inputC">
+    <p>Độ F</p>
+    <input type="text" oninput="converFtC(this.value)" id="inputF">
+    <p id="resultC"></p>
+    <p id="resultF"></p>
+
+
+    <script>
+        class Temperature {
+            constructor (c, f) {
+                this.c = c;
+                this.f = f;
+            }
+
+            ctof = function() {
+                return this.c * 1.8 + 32;
+            }
+            ftoc = function() {
+                return this.f / 1.8 - 32 / 1.8;
+            }
+        }
+
+        function converCtF(c) {
+            let temp = new Temperature(c);
+            document.getElementById('resultC').innerHTML = c + ' độ C bằng ' + Math.floor(temp.ctof()) + ' độ F.';
+        }
+
+        function converFtC(f) {
+            let temp = new Temperature( 0, f);
+            document.getElementById('resultF').innerHTML = f + ' độ F bằng ' + Math.floor(temp.ftoc()) + ' độ C.';
+        }
+    </script>
+</body>
+</html>
