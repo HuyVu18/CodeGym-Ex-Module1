@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Chiều dài</p>
+    <input type="text" id="inputa">
+    <p>Chiều rộng</p>
+    <input type="text" id="inputb">
+    <input type="button" onclick="greateR()" value="DRAW">
+    <p id="resultc"></p>
+    <p id="results"></p>
+
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+
+    <script>
+        class Rectangle {
+            constructor (a, b) {
+                this.x = 20;
+                this.y = 20;
+                this.a = a;
+                this.b = b;
+            }
+
+            drawRectangle = function(ctx) {
+                ctx.fillStyle = '#FF0000';
+                ctx.fillRect(this.x, this.y, this.a, this.b);
+            }
+
+            cRectangle = function() {
+                return (this.a + this.b) * 2;
+            }
+            sRectangle = function() {
+                return this.a * this.b;
+            }
+        }
+
+        let canvas = document.getElementById('myCanvas');
+        let ctx = canvas.getContext('2d');
+
+        function clearCircle() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function greateR() {
+            clearCircle()
+            let a = document.getElementById('inputa').value;
+            let b = document.getElementById('inputb').value;
+            let rectangle1 = new Rectangle(a, b);
+            rectangle1.drawRectangle(ctx);
+            document.getElementById('resultc').innerHTML = 'Chu vi: ' + rectangle1.cRectangle();
+            document.getElementById('results').innerHTML = 'Diện tích: ' + rectangle1.sRectangle();
+        }
+    </script>
+</body>
+</html>
